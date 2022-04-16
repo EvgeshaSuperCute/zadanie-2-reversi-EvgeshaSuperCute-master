@@ -1,38 +1,26 @@
 
 
-package sk.stuba.fei.uim.oop;
+package sk.stuba.fei.uim.oop.INTERFACE;
 
-/**
- * This is an interface for ReversiAgents to work with the GUI interface.
- */
+
 public interface Agent {
 
-	/**
-	 * Method to make a move. game state is stored in the class variables
-	 *
-	 * Method for you to implement. You want to make your modifications here.
-	 *
-	 * return Returns a move.
-	 */
+
 	MoveCoord findMove(char[][] board, char piece);
 
-	/**
-	 * class that implements a pair of integer coordinates
-	 */
+
 	public class MoveCoord {
 		private int row;
 
 		private int col;
 
-		/**
-		 * constructor for a Pair of coordinates
-		 */
+
 		public MoveCoord(int row, int col) {
 			this.row = row;
 			this.col = col;
 		}
 
-		/** accessor methods */
+
 		public int getRow() {
 			return this.row;
 		}
@@ -41,7 +29,7 @@ public interface Agent {
 			return this.col;
 		}
 
-		/** mutation methods */
+
 		public void setRow(int row) {
 			this.row = row;
 		}
@@ -51,15 +39,13 @@ public interface Agent {
 		}
 
 
-		/** takes a pair of x,y coordinates, converts to standard board notation */
+
 		public static String encode(int row, int col) {
 			return ("" + (char) ('A' + col) + (row + 1));
 		}
 	}
 	
-	/**
-	* Class for presenting the move and the score together
-	*/
+
 	public class MoveScore implements Comparable<MoveScore>{
 		private MoveCoord move ;
 	    private int score ;
